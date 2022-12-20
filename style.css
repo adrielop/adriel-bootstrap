@@ -1,0 +1,481 @@
+body {
+    font: 20px Montserrat, sans-serif;
+    line-height: 1.8;
+    color: #f5f6f7;
+  }
+  p {font-size: 16px;}
+  .margin {margin-bottom: 45px;}
+  .bg-1 { 
+    background-color: #1abc9c; /* Green */
+    color: #ffffff;
+  }
+  .bg-2 { 
+    background-color: #474e5d; /* Dark Blue */
+    color: #ffffff;
+  }
+  .bg-3 { 
+    background-color: #ffffff; /* White */
+    color: #555555;
+  }
+  .bg-4 { 
+    background-color: #2f2f2f; /* Black Gray */
+    color: #fff;
+  }
+  .container-fluid {
+    padding-top: 70px;
+    padding-bottom: 70px;
+  }
+
+  :root {
+    --clr-background: radial-gradient(circle at 49% 46%,rgba(149,176,241,0.51), rgba(174, 192, 235, 0) 50%), radial-gradient(circle at 10% 10%,rgba(241, 189, 134, 0.758), rgba(240,173,103,0) 50%), radial-gradient(circle at 90% 10%,rgba(183, 150, 255, 0.631), rgba(184,150,255,0) 50%), radial-gradient(circle at 90% 90%,rgba(81, 136, 191, 0.69), rgba(47,168,178,0) 50%), radial-gradient(circle at 10% 90%,rgba(142, 106, 196, 0.5), rgba(168,112,253,0) 50%);
+    --clr-line: rgba(255, 255, 255, 0.65);
+    --clr-text: rgba(0, 0, 0, 0.77); 
+    --clr-orange: rgba(220, 129, 32, 0.663);  
+    --clr-white: rgb(255, 255, 255);
+    --fontfp: 'Montserrat Alternates', sans-serif;
+
+    --value-percentage10: rotate(18deg);
+    --value-percentage20: rotate(36deg);
+    --value-percentage30: rotate(54deg);
+    --value-percentage40: rotate(72deg);
+    --value-percentage50: rotate(90deg);
+    --value-percentage60: rotate(108deg);
+    --value-percentage70: rotate(126deg);
+    --value-percentage80: rotate(144deg);
+    --value-percentage90: rotate(162deg);
+    --value-percentage100: rotate(180deg);
+    --to-deg: 
+}
+
+
+
+
+h2 {
+  padding: 50px;
+  color: black;
+  font-size: 40px;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.10em;
+  justify-content: center;
+  display: flex;
+}
+
+.skills{
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 20px;
+}
+
+.ch-grid {
+	padding: 0;
+	list-style: none;
+	display: block;
+	text-align: center;
+	width: 100%;
+}
+
+.ch-grid:after,
+.circle:before {
+	content: '';
+    display: table;
+}
+
+.ch-grid:after {
+	clear: both;
+}
+
+.ch-grid li {
+	width: 160px;
+	height: 160px;
+	display: inline-block;
+	margin:10px;
+}
+
+.circle {
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+	overflow: hidden;
+	position: relative;
+	cursor: pointer;
+	box-shadow: 
+		inset 0 0 0 14px rgba(255, 255, 255, 0.386),
+		0 1px 2px rgba(0,0,0,0.1);
+	transition: all 0.4s ease-in-out;
+}
+
+.ch-img { 
+    position: absolute;
+    width: 45%;
+    height: 45%;
+    left: 27%;
+    top: 28%;
+}
+
+.ch-info {
+	position: absolute;
+	background: rgba(255, 255, 255, 0.017);
+	width: inherit;
+	height: inherit;
+	border-radius: 50%;
+	overflow: hidden;
+	opacity: 0;
+	transition: all 0.4s ease-in-out;
+	transform: scale(0);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.ch-info h3 {
+	color: white;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	font-size: 14px;
+	margin: 0px 30px;
+	padding: 40px 0 0 0;
+}
+
+.ch-info p {
+	color: #fff;
+	padding: 5px 5px;
+	margin: 0 20px;
+	font-size: 16px;
+	border-top: 3px solid var(--clr-orange);
+	opacity: 0;
+	transition: all 1s ease-in-out 0.4s;
+}
+
+.circle:hover {
+	box-shadow: 
+		inset 0 0 0 1px rgba(255,255,255,0.1),
+		0 1px 2px rgba(0,0,0,0.1);
+}
+
+.circle:hover .mask.full  {
+  display: none;
+}
+
+.circle:hover .mask .fill  {
+  display: none;
+}
+
+.circle:hover .ch-info {
+	transform: scale(1);
+	opacity: 1;
+}
+
+.circle:hover .ch-info p {
+	opacity: 1;
+}
+
+.circle .mask,
+.circle .fill {
+  width: 160px;
+  height: 160px;
+  position: absolute;
+  border-radius: 50%;
+}
+
+.circle .mask {
+    clip: rect(0px, 160px, 160px, 80px);
+  }
+
+.mask .fill {
+  clip: rect(0px, 80px, 160px, 0px);
+  background-color: var(--clr-orange);
+}
+
+.mask.full,
+.circle .fill {
+  animation: fill ease-in-out 3s;
+}
+
+@keyframes fill{
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: var(--to-deg);
+  }
+}
+
+.circle .inside-circle {
+    width: 132px;
+    height: 132px;
+    border-radius: 50%;
+    background: rgb(137, 161, 216);
+    margin-top: 14px;
+    margin-left: 14px;
+    position: absolute;
+  }
+  
+
+
+  /* baru */
+
+  @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+/* * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Poppins", sans-serif;
+} */
+
+.container {
+    max-width: 1200px;
+    width: 90%;
+    margin: 0 auto;
+}
+
+:root {
+    
+    --primary-color: #ff3c78;
+    --light-black: rgba(0, 0, 0, 0.89);
+    --black: #000;
+    --white: #fff;
+    --grey: #aaa;
+}
+
+.contact {
+    margin-top: 45px;
+}
+
+.form {
+    display: flex;
+    justify-content: space-between;
+    margin: 80px 0;
+}
+
+.form .form-txt {
+    flex-basis: 48%;
+}
+
+.form .form-txt h1 {
+    font-weight: 600;
+    color: var(--black);
+    font-size: 40px;
+    letter-spacing: 1.5px;
+    margin-bottom: 10px;
+    color: var(--light-black);
+}
+
+.form .form-txt span {
+    color: var(--light-black);
+    font-size: 14px;
+}
+
+.form .form-txt h3 {
+    font-size: 22px;
+    font-weight: 600;
+    margin: 15px 0;
+    color: var(--light-black);
+}
+
+.form .form-txt p {
+    color: var(--light-black);
+    font-size: 14px;
+}
+
+.form .form-details {
+    flex-basis: 48%;
+}
+
+.form .form-details input[type="text"],
+.form .form-details input[type="email"] {
+    padding: 15px 20px;
+    color: var(--black);
+    outline: none;
+    border: 1px solid var(--grey);
+    margin: 35px 15px;
+    font-size: 14px;
+}
+
+.form .form-details textarea {
+    padding: 15px 20px;
+    margin: 0 15px;
+    color: var(--black);
+    outline: none;
+    border: 1px solid var(--grey);
+    font-size: 14px;
+    resize: none;
+}
+
+.form .form-details button {
+    padding: 15px 25px;
+    color: var(--white);
+    font-weight: 500;
+    background: var(--black);
+    outline: none;
+    border: none;
+    margin: 15px;
+    font-size: 14px;
+    letter-spacing: 2px;
+    cursor: pointer;
+}
+
+@media (max-width: 500px) {
+    .form {
+        display: flex;
+        flex-direction: column;
+    }
+    .form .form-details button {
+        margin-left: 0;
+    }
+    .form .form-details input[type="text"],
+    .form .form-details input[type="email"],
+    .form .form-details textarea {
+        width: 100%;
+        margin-left: 0;
+    }
+    .form .form-details input[type="text"] {
+        margin-bottom: 0px;
+    }
+}
+
+@media(min-width: 501px) and (max-width: 768px) {
+    .form {
+        display: flex;
+        flex-direction: column;
+    }
+    .form .form-details button {
+        margin-left: 0;
+    }
+    .form .form-details input[type="text"],
+    .form .form-details input[type="email"],
+    .form .form-details textarea {
+        width: 100%;
+        margin-left: 0;
+    }
+    .form .form-details input[type="text"] {
+        margin-bottom: 0px;
+    }
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+/* * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+} */
+
+/* *:focus,
+*:active {
+  outline: none !important;
+  -webkit-tap-highlight-color: transparent;
+} */
+
+#social {
+  display: grid;
+  height: 100%;
+  width: 100%;
+  font-family: "Poppins", sans-serif;
+  place-items: center;
+}
+
+.wrapper {
+  display: inline-flex;
+  list-style: none;
+}
+
+.wrapper .icon {
+  position: relative;
+ 
+  border-radius: 50%;
+  padding: 15px;
+  margin: 10px;
+  width: 50px;
+  height: 50px;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.wrapper .tooltip {
+  position: absolute;
+  top: 0;
+  font-size: 14px;
+  background: #ffffff;
+  color: #ffffff;
+  padding: 5px 8px;
+  border-radius: 5px;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.wrapper .tooltip::before {
+  position: absolute;
+  content: "";
+  height: 8px;
+  width: 8px;
+  background: #ffffff;
+  bottom: -3px;
+  left: 50%;
+  transform: translate(-50%) rotate(45deg);
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.wrapper .icon:hover .tooltip {
+  top: -45px;
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.wrapper .icon:hover span,
+.wrapper .icon:hover .tooltip {
+  text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.1);
+}
+
+.wrapper .facebook:hover,
+.wrapper .facebook:hover .tooltip,
+.wrapper .facebook:hover .tooltip::before {
+  background: #1877F2;
+  color: #ffffff;
+}
+
+.wrapper .twitter:hover,
+.wrapper .twitter:hover .tooltip,
+.wrapper .twitter:hover .tooltip::before {
+  background: #1DA1F2;
+  color: #ffffff;
+}
+
+.wrapper .instagram:hover,
+.wrapper .instagram:hover .tooltip,
+.wrapper .instagram:hover .tooltip::before {
+  background: #E4405F;
+  color: #ffffff;
+}
+
+.wrapper .github:hover,
+.wrapper .github:hover .tooltip,
+.wrapper .github:hover .tooltip::before {
+  background: #333333;
+  color: #ffffff;
+}
+
+.wrapper .youtube:hover,
+.wrapper .youtube:hover .tooltip,
+.wrapper .youtube:hover .tooltip::before {
+  background: #CD201F;
+  color: #ffffff;
+}
